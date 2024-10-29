@@ -15,29 +15,30 @@
 
 package BadBoss;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.ArrayList;
 
 public class BadBoss {
-    private int myInt1;
-    private int myInt2;
+    private static Object myObj1;
+    private static Object myObj2;
 
     public static void main(String[] args) {
 
     }
 
     public void swapField() {
-        int temp = myInt1;
-        myInt1   = myInt2;
-        myInt2   = temp;
+        Object temp = myObj1;
+        myObj1      = myObj2;
+        myObj2      = temp;
+    }
+
+    public void swapParam(int x, int y) {
+        
     }
 
     public void swapLocal() {
-        int x;
-        int y;
-        
-        // check if this is right
-        swapParam(x, y);
+        int x = 1;
+        int y = 1;
+        privSwapParam(x, y);
     }
 
     public void swapArray(int a[], int index1, int index2) {
@@ -48,14 +49,13 @@ public class BadBoss {
     }
 
     // fix this, List needs to be paramaterized
-    public void swapList(List a, int index1, int index2) {
+    public void swapList(ArrayList<String> a, int index1, int index2) {
         a.swap(index1, index2);
     }
 
-    // this might not supposed to be private
-    private void swapParam(int x, int y) {
+    private void privSwapParam(int x, int y) {
         int temp = x;
-        x        = y;
-        y        = temp;
+        x = y;
+        y = temp;
     }
 }
