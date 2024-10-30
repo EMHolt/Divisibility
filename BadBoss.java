@@ -18,44 +18,58 @@ package BadBoss;
 import java.util.ArrayList;
 
 public class BadBoss {
-    private static Object myObj1;
-    private static Object myObj2;
+    private static Tree myTree1;
+    private static Tree myTree2;
 
     public static void main(String[] args) {
 
     }
 
     public void swapField() {
-        Object temp = myObj1;
-        myObj1      = myObj2;
-        myObj2      = temp;
+        Tree tempTree = myTree1;
+        myTree1       = myTree2;
+        myTree2       = tempTree;
     }
 
-    public void swapParam(int x, int y) {
+    public short[] swapParam(short x, short y) {
+        short temp = x;
+        x          = y;
+        y          = temp;
+        short[] myShort = new short[2];
+        myShort[0] = x;
+        myShort[1] = y;
+        return myShort;
+    }
+
+    public Point[] swapLocal() {
+        Point x = new Point();
+        Point y = new Point();
+        Point[] pArr = privSwapParam(x, y);
+        return pArr;
         
     }
 
-    public void swapLocal() {
-        int x = 1;
-        int y = 1;
-        privSwapParam(x, y);
-    }
-
     public void swapArray(int a[], int index1, int index2) {
-        int i1 = a[index1];
-        int i2 = a[index2];
+        int i1    = a[index1];
+        int i2    = a[index2];
         a[index1] = i2;
         a[index2] = i1;
     }
 
-    // fix this, List needs to be paramaterized
-    public void swapList(ArrayList<String> a, int index1, int index2) {
-        a.swap(index1, index2);
+    public void swapList(ArrayList<Pet> a, int index1, int index2) {
+        Pet pet1     = a.get(index1);
+        Pet pet2     = a.get(index2);
+        Pet tempPet  = pet1;
+        pet1         = pet2;
+        pet2         = tempPet;
+
     }
 
-    private void privSwapParam(int x, int y) {
-        int temp = x;
-        x = y;
-        y = temp;
+    private Point[] privSwapParam(Point x, Point y) {
+        Point tempPoint = x;
+        x               = y;
+        y               = tempPoint;
+        Point[] myPArr = {x, y};
+        return myPArr;
     }
 }
