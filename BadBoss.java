@@ -22,16 +22,25 @@ public class BadBoss {
     private static Tree myTree2;
 
     public static void main(String[] args) {
-
+    	// Method 1
+    	myTree1 = new Tree(1, 1);
+    	myTree2 = new Tree(2, 2);
+    	System.out.println("swapField()\nBefore:\n" + myTree1.toString()
+    	+ "\n" + myTree2.toString());
+    	swapField();
+    	System.out.println("After:\n" + myTree1.toString() + "\n" + myTree2.toString());
+    	
+    	// Method 2
+    	
     }
 
-    public void swapField() {
+    public static void swapField() {
         Tree tempTree = myTree1;
         myTree1       = myTree2;
         myTree2       = tempTree;
     }
 
-    public short[] swapParam(short x, short y) {
+    public static short[] swapParam(short x, short y) {
         short temp = x;
         x          = y;
         y          = temp;
@@ -41,7 +50,7 @@ public class BadBoss {
         return myShort;
     }
 
-    public Point[] swapLocal() {
+    public static Point[] swapLocal() {
         Point x = new Point();
         Point y = new Point();
         Point[] pArr = privSwapParam(x, y);
