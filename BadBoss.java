@@ -31,7 +31,15 @@ public class BadBoss {
     	System.out.println("After:\n" + myTree1.toString() + "\n" + myTree2.toString());
     	
     	// Method 2
-    	
+        short x, y;
+        x = 5;
+        y = 10;
+        System.out.println("Before:\n" + x + "\n" + y);
+        short[] paramRes = swapParam(x, y);
+        System.out.println("After:\n" + x + "\n" + y);
+
+        // Method 3
+        
     }
 
     public static void swapField() {
@@ -55,7 +63,6 @@ public class BadBoss {
         Point y = new Point();
         Point[] pArr = privSwapParam(x, y);
         return pArr;
-        
     }
 
     public void swapArray(int a[], int index1, int index2) {
